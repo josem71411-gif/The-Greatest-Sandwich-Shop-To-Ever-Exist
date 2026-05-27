@@ -4,9 +4,7 @@ import com.pluralsight.shop.models.Chip;
 import com.pluralsight.shop.models.Drink;
 import com.pluralsight.shop.models.Order;
 import com.pluralsight.shop.models.Sandwich;
-import com.pluralsight.shop.toppings.RegularTopping;
-import com.pluralsight.shop.toppings.Sauce;
-import com.pluralsight.shop.toppings.Side;
+import com.pluralsight.shop.toppings.*;
 
 import java.util.Scanner;
 
@@ -135,8 +133,6 @@ private void addMeats(Sandwich sandwich){
 
             boolean extra = scanner.nextLine().equalsIgnoreCase("Yes");
 
-            boolean extra = scanner.nextLine().equalsIgnoreCase("yes");
-
             sandwich.addTopping(new Cheese(cheese, extra));
         }
     }
@@ -198,7 +194,7 @@ private void addMeats(Sandwich sandwich){
 
         String type = scanner.nextLine();
 
-        Chips chips = new Chips(type);
+        Chip chips = new Chip(type);
 
         currentOrder.addItem(chips);
         System.out.println("Chips added.");
@@ -212,7 +208,7 @@ private void addMeats(Sandwich sandwich){
         String confirm = scanner.nextLine();
 
         if (confirm.equalsIgnoreCase("yes")) {
-            receiptFileManager.saveReceipt(currentorder);
+            receiptFileManager.saveReceipt(currentOrder);
             System.out.println("Order Completed.");
         }  else {
             System.out.println(
