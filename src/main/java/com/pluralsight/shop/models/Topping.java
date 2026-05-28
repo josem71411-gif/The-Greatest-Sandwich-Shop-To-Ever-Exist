@@ -1,4 +1,4 @@
-package com.pluralsight.shop.toppings;
+package com.pluralsight.shop.models;
 
 public abstract class Topping {
     private String name;

@@ -1,4 +1,4 @@
-package com.pluralsight.shop.toppings;
+package com.pluralsight.shop.models;
 
 public class Side  extends Topping {
     public Side(String name, boolean extra) {

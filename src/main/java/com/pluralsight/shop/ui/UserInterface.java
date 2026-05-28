@@ -1,10 +1,6 @@
 package com.pluralsight.shop.ui;
 import com.pluralsight.shop.filemanagement.ReceiptFileManager;
-import com.pluralsight.shop.models.Chip;
-import com.pluralsight.shop.models.Drink;
-import com.pluralsight.shop.models.Order;
-import com.pluralsight.shop.models.Sandwich;
-import com.pluralsight.shop.toppings.*;
+import com.pluralsight.shop.models.*;
 
 import java.util.Scanner;
 
@@ -110,7 +106,7 @@ private void addMeats(Sandwich sandwich){
             break;
         }
 
-        System.out.print("Extra meat? yes/no");
+        System.out.print("Extra meat? yes/no: ");
         boolean extra =
                 scanner.nextLine()
                         .equalsIgnoreCase("yes");

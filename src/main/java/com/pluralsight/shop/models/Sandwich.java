@@ -1,5 +1,4 @@
 package com.pluralsight.shop.models;
-import com.pluralsight.shop.toppings.Topping;
 
 import java.util.ArrayList;
 public class Sandwich implements OrderItem {
