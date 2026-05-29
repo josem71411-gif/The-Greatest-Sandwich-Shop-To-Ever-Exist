@@ -177,8 +177,6 @@ com.pluralsight.shop
 │   ├── Order
 │   ├── OrderItem
 │   └── Sandwich
-│
-├── toppings
 │   ├── Cheese
 │   ├── Meat
 │   ├── RegularTopping
