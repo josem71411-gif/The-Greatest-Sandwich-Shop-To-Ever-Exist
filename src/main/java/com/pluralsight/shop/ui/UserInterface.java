@@ -1,7 +1,6 @@
 package com.pluralsight.shop.ui;
 import com.pluralsight.shop.filemanagement.ReceiptFileManager;
 import com.pluralsight.shop.models.*;
-
 import java.util.Scanner;
 
 public class UserInterface {
@@ -17,19 +16,20 @@ public class UserInterface {
         while(running) {
             System.out.println("\n===== Worlds Greatest Deli =====");
             System.out.println("1) New Order");
+            System.out.println("2) View Receipts");
             System.out.println("0) Exit");
-
             System.out.print("Choose an option: ");
 
             int choice =
                     Integer.parseInt(scanner.nextLine());
-
             if (choice == 1) {
                 currentOrder = new Order();
                 displayOrderScreen();
+            } else if (choice == 2) {
+                receiptFileManager.displayReceipts();
             } else if (choice == 0) {
                 running = false;
-                System.out.println("Goodbye!");
+                System.out.println("WOW YOU DONT WANT OUR FOOD?!?!?");
 
             }
 
@@ -74,9 +74,18 @@ public class UserInterface {
         System.out.print("Select Bread: White, Wheat, Rye, Wrap: ");
 
         String bread = scanner.nextLine();
-        System.out.print("Select Size: 4 Inch, 8 Inch, or 12 Inch: ");
 
-        String size = scanner.nextLine();
+        String size = "";
+        while (true) {
+            System.out.print("Select size: 4, 8, or 12: ");
+            size = scanner.nextLine();
+            if (size.equals("4") ||
+                    size.equals("8") ||
+                    size.equals("12")) {
+                break;
+            }
+            System.out.println("Invalid Bread selection");
+        }
 
         System.out.print("Would you like it toasted? yes/no: ");
 
@@ -98,7 +107,7 @@ private void addMeats(Sandwich sandwich){
 
     while(true) {
         System.out.print(
-                "Add Meat? steak, ham, salami, roast beef, chicken, bacon, or done: ");
+                "Add Meat? Waygu Steak, Ham, Salami, Roast Beef, Chicken, Bacon, or done: ");
 
         String meat = scanner.nextLine();
 
@@ -117,7 +126,7 @@ private void addMeats(Sandwich sandwich){
     }
     private void addCheeses(Sandwich sandwich) {
         while (true) {
-            System.out.print("Add Cheese? american, provolone, cheddar, swiss, or done:  ");
+            System.out.print("Add Cheese? American, Pule from Serbia, Provolone, Cheddar, Swiss, or done:  ");
 
             String cheese = scanner.nextLine();
 
@@ -134,7 +143,7 @@ private void addMeats(Sandwich sandwich){
     }
     private void addRegularToppings(Sandwich sandwich) {
         while(true) {
-            System.out.print("Add Topppings? lettuce, peppers, onion, tomatoes, jalapenos, cucumber, pickkles, guacamole, mushrooms, or done: ");
+            System.out.print("Add Toppings? Banana peppers, Lettuce, Red Peppers, Green Peppers, Onion, Tomatoes, Jalapenos, Cucumber, Mushrooms, or done: ");
 
             String topping = scanner.nextLine();
 
@@ -148,7 +157,7 @@ private void addMeats(Sandwich sandwich){
 
     private void addSauces(Sandwich sandwich) {
         while(true) {
-            System.out.print("Add sauce? mayo, ketchup, ranch, thousand islands, vinaigrette, or done: ");
+            System.out.print("Add sauce? Special sauce, Mayo, Ketchup, Ranch, Thousand islands, Vinaigrette, Chic-fil-a sauce, or done: ");
             String sauce = scanner.nextLine();
 
             if (sauce.equalsIgnoreCase("done")) {
@@ -160,7 +169,7 @@ private void addMeats(Sandwich sandwich){
     }
     private void addSides(Sandwich sandwich) {
         while(true) {
-            System.out.print("Add side? au jus, sauce, or done: ");
+            System.out.print("Add side? Au jus, Caviar, or done: ");
 
             String side =
                     scanner.nextLine();
@@ -174,8 +183,17 @@ private void addMeats(Sandwich sandwich){
     private void addDrink() {
         System.out.println("\n===== Add Drink =====");
 
-        System.out.print("Drink size? small, medium, large: ");
-        String size = scanner.nextLine();
+        String size = "";
+        while (true) {
+            System.out.print("Select size: Small, Medium, large: ");
+            size = scanner.nextLine();
+            if (size.equals("Small") ||
+                    size.equals("Medium") ||
+                    size.equals("Large")) {
+                break;
+            }
+            System.out.println("Invalid Drink selection");
+        }
 
         System.out.print("Drink Flavor? ");
         String flavor = scanner.nextLine();

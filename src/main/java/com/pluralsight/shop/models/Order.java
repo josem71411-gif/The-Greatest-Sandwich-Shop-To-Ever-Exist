@@ -2,6 +2,7 @@ package com.pluralsight.shop.models;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
+
 public class Order {
 
     private ArrayList<OrderItem> items;
@@ -32,7 +33,10 @@ public class Order {
     }
     public String getDetails() {
         StringBuilder details = new StringBuilder();
+        details.append("===================================\n");
         details.append("===== THE WORLDS GREATEST DELI=====\n");
+        details.append("====================================\n");
+        details.append("Date: ").append(orderDateTime).append("\n\n");
         details.append(orderDateTime).append("\n\n");
 
         for (OrderItem item : getItemsNewestFirst()) {
